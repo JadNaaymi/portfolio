@@ -1,0 +1,24 @@
+<template>
+    <section class="cert-wrapper" id="certs">
+        <div class="section-header">
+            <h2 class="title">Certifications</h2>
+            <p class="subtitle">Verified expertise in the Salesforce ecosystem.</p>
+        </div>
+
+        <div class="cert-grid">
+            <template for:each={certs} for:item="cert">
+                <div key={cert.id} class="cert-card">
+                    <div class="cert-icon-container">
+                        <img src={cert.logo} alt={cert.name} class="cert-logo" />
+                    </div>
+                    <div class="cert-info">
+                        <h3>{cert.name}</h3>
+                        <p class="issuer">{cert.issuer}</p>
+                        <p class="date">Issued: {cert.date}</p>
+                        <a href={cert.verifyUrl} target="_blank" class="verify-link">Verify Credentials</a>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

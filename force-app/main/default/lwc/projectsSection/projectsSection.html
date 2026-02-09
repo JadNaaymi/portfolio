@@ -1,0 +1,33 @@
+<template>
+    <section class="projects-wrapper" id="projects">
+        <div class="section-header">
+            <h2 class="title">Featured Work</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="projects-grid">
+            <template for:each={projects} for:item="proj">
+                <div key={proj.id} class="card">
+                    <div class="image-container">
+                        <img src={proj.imageUrl} alt={proj.title} />
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">{proj.title}</h3>
+                        <p class="project-desc">{proj.description}</p>
+                        
+                        <div class="tech-tags">
+                            <template for:each={proj.techStack} for:item="stack">
+                                <span key={stack} class="tag">{stack}</span>
+                            </template>
+                        </div>
+
+                        <div class="card-links">
+                            <a href={proj.githubUrl} class="link github">GitHub</a>
+                            <a href={proj.demoUrl} class="link demo">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

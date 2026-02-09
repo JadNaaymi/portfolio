@@ -1,0 +1,48 @@
+:host {
+    --transition-speed: 0.6s;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Theme Definitions */
+.light {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --accent: #6366f1;
+    --card-glow: rgba(99, 102, 241, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
+    --bg-main: #020617;
+    --text-main: #f8fafc;
+    --accent: #38bdf8;
+    --card-glow: rgba(56, 189, 248, 0.15);
+    --glass-bg: rgba(15, 23, 42, 0.7);
+}
+
+.app-container {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color var(--transition-speed) var(--ease);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Global Advanced Animation: View-Reveal */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Applied to all sections via the child components */
+section {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}

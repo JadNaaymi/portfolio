@@ -1,0 +1,21 @@
+<template>
+    <section class="skills-wrapper" id="skills">
+        <div class="section-header">
+            <h2 class="title">Technical Arsenal</h2>
+            <p class="subtitle">The tools and technologies I use to bring ideas to life.</p>
+        </div>
+
+        <div class="skills-grid">
+            <template for:each={skillCategories} for:item="category">
+                <div key={category.name} class="skill-category">
+                    <h3>{category.name}</h3>
+                    <div class="tags-container">
+                        <template for:each={category.skills} for:item="skill">
+                            <span key={skill} class="skill-tag">{skill}</span>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

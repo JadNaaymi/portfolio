@@ -1,0 +1,17 @@
+<template>
+    <div class={themeClass} data-theme={themeClass}>
+        <main class="app-container">
+            <c-theme-toggle 
+                is-dark={isDark} 
+                ontoggle={handleThemeToggle}>
+            </c-theme-toggle>
+
+            <c-hero-section></c-hero-section>
+            <!-- <c-about-section></c-about-section>
+            <c-skills-section></c-skills-section>
+            <c-projects-section></c-projects-section>
+            <c-certifications-section></c-certifications-section>
+            <c-contact-section></c-contact-section> -->
+        </main>
+    </div>
+</template>

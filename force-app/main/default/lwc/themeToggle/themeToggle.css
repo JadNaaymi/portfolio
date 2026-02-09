@@ -1,0 +1,38 @@
+.toggle-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--accent);
+}
+
+.sun-moon-svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.5s var(--ease);
+}
+
+/* Rotation logic */
+:host([data-theme='dark']) .sun-moon-svg {
+    transform: rotate(40deg);
+}
+
+.sun-beams {
+    transition: opacity 0.3s ease;
+}
+
+:host([data-theme='dark']) .sun-beams {
+    opacity: 0;
+}
+
+.mask-circle {
+    transition: cx 0.5s var(--ease), cy 0.5s var(--ease);
+}
+
+:host([data-theme='dark']) .mask-circle {
+    cx: 17;
+    cy: 8;
+}
