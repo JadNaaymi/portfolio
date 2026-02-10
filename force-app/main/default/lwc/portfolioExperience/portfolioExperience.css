@@ -1,0 +1,87 @@
+.experience-section {
+    padding: 4rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 2rem;
+}
+
+.exp-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid rgba(180, 155, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.card-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Specific Glows for Icons */
+.purple-glow { background: rgba(112, 66, 248, 0.2); box-shadow: 0 0 15px rgba(112, 66, 248, 0.3); }
+.orange-glow { background: rgba(255, 165, 0, 0.2); box-shadow: 0 0 15px rgba(255, 165, 0, 0.3); }
+
+.text-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.text-box p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experience-grid { grid-template-columns: 1fr; }
+}
