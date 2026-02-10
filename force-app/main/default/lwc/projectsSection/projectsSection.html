@@ -1,33 +1,37 @@
 <template>
-    <section class="projects-wrapper" id="projects">
-        <div class="section-header">
-            <h2 class="title">Featured Work</h2>
-            <div class="underline"></div>
+    <section class="projects-container">
+        <div class="project-wrapper">
+            <div class="image-area">
+                <img src={project1Url} class="project-screenshot" alt="Project 1">
+            </div>
+            <div class="content-area">
+                <p class="featured-tag">Featured Project</p>
+                <h3 class="project-name">Example Project</h3>
+                <div class="glass-description">
+                    <p>A web app for visualizing personal Spotify data. View your top artists, top tracks, and recently played tracks.</p>
+                </div>
+                <div class="project-icons">
+                    <span class="icon-link">🔗</span>
+                    <span class="icon-link">📁</span>
+                </div>
+            </div>
         </div>
 
-        <div class="projects-grid">
-            <template for:each={projects} for:item="proj">
-                <div key={proj.id} class="card">
-                    <div class="image-container">
-                        <img src={proj.imageUrl} alt={proj.title} />
-                    </div>
-                    <div class="card-content">
-                        <h3 class="project-title">{proj.title}</h3>
-                        <p class="project-desc">{proj.description}</p>
-                        
-                        <div class="tech-tags">
-                            <template for:each={proj.techStack} for:item="stack">
-                                <span key={stack} class="tag">{stack}</span>
-                            </template>
-                        </div>
-
-                        <div class="card-links">
-                            <a href={proj.githubUrl} class="link github">GitHub</a>
-                            <a href={proj.demoUrl} class="link demo">Live Demo</a>
-                        </div>
-                    </div>
+        <div class="project-wrapper flipped">
+            <div class="image-area">
+                <img src={project2Url} class="project-screenshot" alt="Project 2">
+            </div>
+            <div class="content-area">
+                <p class="featured-tag">Featured Project</p>
+                <h3 class="project-name">Example Project</h3>
+                <div class="glass-description">
+                    <p>A web app for visualizing personal Spotify data. View your top artists, top tracks, and recently played tracks.</p>
                 </div>
-            </template>
+                <div class="project-icons">
+                    <span class="icon-link">🔗</span>
+                    <span class="icon-link">📁</span>
+                </div>
+            </div>
         </div>
     </section>
 </template>

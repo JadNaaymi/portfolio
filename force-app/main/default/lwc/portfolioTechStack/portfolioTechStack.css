@@ -1,0 +1,90 @@
+.tech-stack-section {
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.purple-text {
+    color: #b49bff;
+    font-weight: bold;
+}
+
+.orbit-container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+/* Central Hub */
+.center-hub {
+    position: relative;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+}
+
+.hub-logo {
+    width: 100%;
+    height: 100%;
+    background: #1a0b3c;
+    border: 2px solid #7042f8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 0 30px #7042f8;
+}
+
+.hub-glow {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(112,66,248,0.4) 0%, transparent 70%);
+    animation: hubPulse 4s infinite ease-in-out;
+}
+
+/* Tech Icons Positioned in a Circle */
+.tech-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #050110;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 10px;
+    z-index: 11;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.2);
+    border-color: #7042f8;
+}
+
+/* Exact positioning like your image */
+.icon-1 { transform: translate(-140px, -80px); }
+.icon-2 { transform: translate(140px, -80px); }
+.icon-3 { transform: translate(-180px, 40px); }
+.icon-4 { transform: translate(180px, 40px); }
+
+/* Orbit Rings */
+.orbit-ring {
+    position: absolute;
+    border: 1px solid rgba(112, 66, 248, 0.2);
+    border-radius: 50%;
+    transform: rotateX(75deg); /* Flattens the circle to look like an orbit */
+}
+
+.ring-1 { width: 300px; height: 300px; }
+.ring-2 { width: 450px; height: 450px; }
+
+@keyframes hubPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1) translate(-50%, -50%); }
+    50% { opacity: 0.8; transform: scale(1.2) translate(-50%, -50%); }
+}

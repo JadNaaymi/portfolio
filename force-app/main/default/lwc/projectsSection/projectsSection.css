@@ -1,99 +1,80 @@
-:host {
-    display: block;
-    padding: 4rem 0;
+.projects-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.title {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.underline {
-    width: 50px;
-    height: 4px;
-    background: #0176d3;
-    margin: 10px auto;
-}
-
-/* Grid Layout */
-.projects-grid {
+.project-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    margin-bottom: 150px;
 }
 
-/* Card Styling */
-.card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-    transition: all 0.3s ease;
+/* IMAGE ALIGNMENT */
+.image-area {
+    grid-column: 1 / 8; /* Takes up first 7 columns */
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+.flipped .image-area {
+    grid-column: 6 / -1; /* Takes up last 7 columns */
 }
 
-.image-container img {
+.project-screenshot {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
 }
 
-.card-content {
-    padding: 1.5rem;
+/* CONTENT ALIGNMENT (THE OVERLAP) */
+.content-area {
+    grid-column: 7 / -1; /* Starts halfway through the image and goes to end */
+    grid-row: 1;
+    z-index: 2;
+    text-align: right;
 }
 
-.project-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.flipped .content-area {
+    grid-column: 1 / 7; /* Starts at beginning and ends halfway through image */
+    text-align: left;
 }
 
-.project-desc {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-    height: 60px; /* Keeps cards uniform height */
-    overflow: hidden;
+/* TEXT STYLES */
+.featured-tag {
+    color: #b49bff;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
 }
 
-.tech-tags {
+.project-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* THE FLOATING GLASS BOX */
+.glass-description {
+    background: rgba(17, 12, 34, 0.75); /* Dark translucent background */
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(180, 155, 255, 0.2);
+    color: #a0a0a0;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-icons {
+    margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
-.tag {
-    background: #f0f7ff;
-    color: #0176d3;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
+.flipped .project-icons {
+    justify-content: flex-start;
 }
-
-.card-links {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-}
-
-.link {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.github { color: #333; }
-.demo { color: #0176d3; }

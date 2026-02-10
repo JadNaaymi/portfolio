@@ -1,52 +1,22 @@
 <template>
-    <section class="contact-wrapper" id="contact">
-        <div class="section-header">
-            <h2 class="title">Get In Touch</h2>
-            <p class="subtitle">Have a project in mind or just want to say hi? My inbox is always open.</p>
+    <footer class="footer-container">
+        <div class="contact-section">
+            <h2 class="contact-header">Contact</h2>
+            <p class="contact-body">
+                I'm currently looking to join a cross-functional team that values improving people's lives 
+                through accessible design. or have a project in mind? Let's connect.
+            </p>
+            <a href="mailto:gautamverma001@gmail.com" class="email-link">
+                gautamverma001@gmail.com
+            </a>
         </div>
 
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="info-item">
-                    <span class="icon">✉️</span>
-                    <div>
-                        <h4>Email</h4>
-                        <p>your.email@example.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="icon">🔗</span>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <p>linkedin.com/in/yourusername</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="icon">📍</span>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Remote / City, Country</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form-container">
-                <form onsubmit={handleFormSubmit}>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-input" placeholder="Your Name" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-input" placeholder="Your Email" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea class="form-input" rows="4" placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+        <div class="social-bar">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-    </section>
+    </footer>
 </template>
