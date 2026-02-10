@@ -1,48 +1,87 @@
 :host {
     display: block;
-    height: 100vh;
+    margin-top: 50px;
+}
+
+.hero-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: var(--bg-main);
-}
-
-.hero-content {
     text-align: center;
+    gap: 2rem;
+}
+
+/* Memoji Styling & Animation */
+.image-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.memoji {
+    width: 100%;
+    height: auto;
+    position: relative;
     z-index: 2;
+    animation: float 4s ease-in-out infinite;
 }
 
-/* Advanced Text Animation: Masked Gradient */
-.accent-text {
-    background: linear-gradient(90deg, #ff0080, #7928ca, #ff0080);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
-    font-size: 5rem;
-    font-weight: 900;
-}
-
-@keyframes shine {
-    to { background-position: 200% center; }
-}
-
-/* The "Amazing" Part: Floating Glass Blob */
-.blob {
+.profile-glow {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(180deg, var(--accent) 0%, #7000ff 100%);
-    filter: blur(80px);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: morph 8s ease-in-out infinite;
-    opacity: 0.4;
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: #7042f8;
+    filter: blur(50px);
+    border-radius: 50%;
+    opacity: 0.6;
 }
 
-@keyframes morph {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+/* Typography */
+.intro-text {
+    color: #b49bff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.accent-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #b49bff;
+    /* This creates the "hollow" text look in the image */
+}
+
+.sub-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.brand-link {
+    color: #4267B2; /* Facebook Blue */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.fade-in {
+    animation: fadeInStep 1.2s ease-out forwards;
+}
+
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
