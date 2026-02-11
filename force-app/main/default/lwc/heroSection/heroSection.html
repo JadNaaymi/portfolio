@@ -1,24 +1,132 @@
-<template>
-    <section class="hero-container fade-in">
-        <div class="image-wrapper">
-            <div class="profile-glow"></div>
-            <img src={memojiUrl} alt="Profile Memoji" class="memoji">
+<!-- <template>
+    <section id="home" class="banner-section">
+        <div class="container">
+            <div class="hero-layout">
+                
+                <div class="image-wrapper">
+                    <div class="me-container">
+                        <div class="mobile-hello lg-hidden">
+                            <img src={arrowUrl} class="arrow-mobile" alt="arrow">
+                            <p>Hello! I Am <span class="purple">Jad Naaymi</span></p>
+                        </div>
+                        
+                        <img src={meUrl} class="me-photo" alt="Me">
+                        <img src={meGlowUrl} class="me-glow" alt="Glow">
+                    </div>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="desktop-hello lg-only">
+                        <img src={arrowUrl} class="arrow-desktop" alt="arrow">
+                        <p>Hello! I Am <span class="purple">Jad Naaymi</span></p>
+                    </div>
+
+                    <div class="headline-container">
+                        <p class="sub-headline">A Designer who</p>
+                        <h1 class="main-headline">
+                            Judges a book <br> by its 
+                            <span class="circle-wrap">
+                                <img src={circleUrl} class="circle-img" alt="circle">
+                                <span class="gradient-text">cover</span>
+                            </span>...
+                        </h1>
+                        <p class="description">Because if the cover does not impress you what else can?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-container">
+                <p class="typing-text">
+                    I'm a {displayedText}<span class="cursor">|</span>
+                </p>
+                <div class="current-role">
+                    <span>Currently, I'm a Software Engineer at</span>
+                    <span class="company">
+                        <img src={webhrUrl} class="company-logo" alt="WebHR">
+                        <span class="blue">WebHR,</span>
+                    </span>
+                </div>
+                <p class="bio">
+                    I have more than five years of professional experience specializing in Salesforce,
+                     web technologies, and Flutter development
+                </p>
+            </div>
         </div>
+    </section>
+</template> -->
 
-        <div class="text-content">
-            <p class="intro-text">... Hello! I am <span class="highlight">Gautam Verma</span></p>
-            
-            <h1 class="main-title">
-                A designer who <br/>
-                <span class="typewriter">Judges a book <br/> by its <span class="accent-text">cover...</span></span>
-            </h1>
+<template>
+    <section id="home" class="banner-section">
+        <div class="container">
+            <div class="hero-layout">
+                
+                <div class="image-wrapper">
+                    <div class="me-container">
+                        <div class="mobile-hello lg-hidden">
+                            <img src={arrowUrl} class="arrow-mobile" alt="arrow">
+                            <p>Hello! I Am <span class="purple">Jad Naaymi</span></p>
+                        </div>
+                        
+                        <img src={meUrl} class="me-photo" alt="Me">
+                        <img src={meGlowUrl} class="me-glow" alt="Glow">
+                    </div>
+                </div>
 
-            <h2 class="sub-title">I'm a Software Engineer.</h2>
-            
-            <p class="location-text">
-                Currently I'm a Software Engineer at 
-                <span class="brand-link">Facebook</span>
-            </p>
+                <div class="content-wrapper">
+                    <div class="desktop-hello lg-only">
+                        <img src={arrowUrl} class="arrow-desktop" alt="arrow">
+                        <p>Hello! I Am <span class="purple">Jad Naaymi</span></p>
+                    </div>
+
+                    <div class="headline-container">
+                        <p class="sub-headline">A Designer who</p>
+                        <h1 class="main-headline">
+                            Judges a book <br> by its 
+                            <span class="circle-wrap">
+                                <img src={circleUrl} class="circle-img" alt="circle">
+                                <span class="gradient-text">cover</span>
+                            </span>...
+                        </h1>
+                        <p class="description">Because if the cover does not impress you what else can?</p>
+
+                        <div class="cta-container">
+                            <button class="btn-primary" onclick={handleDownloadCV} title="Download Jad Naaymi's CV">
+                                <span>Download CV</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M14 10V14H2V10H1V14C1 14.55 1.45 15 2 15H14C14.55 15 15 14.55 15 14V10H14Z"/>
+                                    <path d="M7.5 1L7.5 10.15L4.85 7.5L4.15 8.2L8 12.05L11.85 8.2L11.15 7.5L8.5 10.15L8.5 1Z"/>
+                                </svg>
+                            </button>
+                            <!-- <a href={cvUrl} download class="btn-primary">
+                                <span>Download CV</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M14 10V14H2V10H1V14C1 14.55 1.45 15 2 15H14C14.55 15 15 14.55 15 14V10H14Z"/>
+                                    <path d="M7.5 1L7.5 10.15L4.85 7.5L4.15 8.2L8 12.05L11.85 8.2L11.15 7.5L8.5 10.15L8.5 1Z"/>
+                                </svg>
+                            </a> -->
+                            <a href="#contact" class="btn-secondary">
+                                Let's collaborate
+                            </a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="typing-container">
+                <p class="typing-text">
+                    I'm a {displayedText}<span class="cursor">|</span>
+                </p>
+                <div class="current-role">
+                    <span>Currently, I'm a Salesforce Consultant at</span>
+                    <span class="company">
+                        <!-- <img src={webhrUrl} class="company-logo" alt="WebHR"> -->
+                        <span class="blue"> EI-TECHNOLOGIES LEBANON</span>
+                    </span>
+                </div>
+                <p class="bio">
+                    Converting business needs into scalable, high-performance digital solutions
+                </p>
+            </div>
         </div>
     </section>
 </template>

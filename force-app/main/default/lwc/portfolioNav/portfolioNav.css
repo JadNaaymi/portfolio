@@ -1,55 +1,53 @@
-:host {
-    display: block;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    background: rgba(3, 0, 20, 0.7); /* Dark semi-transparent */
-    backdrop-filter: blur(10px); /* Glass effect */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* Dark theme with transparency */
+    background: rgba(13, 5, 26, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between; /* This pushes logo left and links right */
+    align-items: center;
 }
 
-.logo-text {
-    background: linear-gradient(to bottom right, #fff, #7042f8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-img {
+    height: 40px; /* Adjust based on your signature image size */
+    width: auto;
+    filter: brightness(0) invert(1); /* Ensures logo is white */
 }
 
 .nav-links {
     display: flex;
     gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-item {
-    color: #fff;
+.link {
+    color: #94a3b8; /* Slate gray color like the screenshot */
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    opacity: 0.8;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.nav-item:hover {
-    color: #b49bff;
-    opacity: 1;
+.link:hover {
+    color: #3b82f6; /* Subtle blue/purple glow on hover */
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1.5rem;
-    }
+/* Specific fix for active/selected state if needed */
+.link:active {
+    color: white;
 }

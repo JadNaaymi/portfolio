@@ -1,51 +1,23 @@
 <template>
-    <section class="about-wrapper" id="about">
-        <div class="section-header">
-            <h2 class="title">About Me</h2>
-            <div class="underline"></div>
-        </div>
-
-        <div class="about-grid">
-            <div class="about-text">
-                <p>
-                    Hello! I'm a passionate developer who loves turning complex problems into simple, 
-                    beautiful, and intuitive designs. My journey in tech started [Year/Event], 
-                    and since then, I've been obsessed with building things that live on the internet.
-                </p>
-                <p>
-                    Currently, I focus on the <strong>Salesforce Ecosystem</strong>, crafting high-performance 
-                    Lightning Web Components and optimizing business processes. I believe that clean code 
-                    isn't just a requirement—it's an art form.
-                </p>
-                <p>
-                    When I'm not at my desk, you'll probably find me [insert hobby: e.g., hiking, gaming, or drinking way too much espresso].
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="main-text">
+                    I'm currently looking to join a 
+                    <span class="purple-text">cross-functional team</span>
+                    <br/>
+                    <span class="sub-text">
+                        that values improving people's lives through accessible design
+                    </span>
                 </p>
             </div>
-
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-item">
-                        <span class="stat-icon">📍</span>
-                        <div class="stat-info">
-                            <span class="label">Location</span>
-                            <span class="value">City, Country</span>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🎓</span>
-                        <div class="stat-info">
-                            <span class="label">Education</span>
-                            <span class="value">B.S. Computer Science</span>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">💼</span>
-                        <div class="stat-info">
-                            <span class="label">Experience</span>
-                            <span class="value">3+ Years</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="image-wrapper">
+                <img 
+                    src={illustrationUrl} 
+                    alt="Skills Illustration" 
+                    class="illustration-img"
+                >
             </div>
         </div>
     </section>

@@ -1,42 +1,38 @@
 :host {
-    --primary-bg: #030014;
-    --accent-purple: #7042f88b;
+    --bg-dark: #030014;
+    --accent-purple: #7042f8;
 }
 
-.portfolio-shell {
-    background-color: var(--primary-bg);
-    color: #ffffff;
+.portfolio-app {
+    background-color: var(--bg-dark);
+    color: white;
     min-height: 100vh;
-    width: 100%;
+    position: relative;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.glow-container {
+/* Background Glows to match Ibrahim's site */
+.purple-glow {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(112, 66, 248, 0.15) 0%, transparent 70%);
+    filter: blur(100px);
     z-index: 0;
     pointer-events: none;
 }
 
-.glow-top {
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
-    filter: blur(80px);
-}
+.glow-1 { top: -10%; right: -10%; }
+.glow-2 { bottom: 10%; left: -10%; }
 
-.main-content {
+.content-fade-in {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8rem; /* Space between sections */
-    padding: 0 5%;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

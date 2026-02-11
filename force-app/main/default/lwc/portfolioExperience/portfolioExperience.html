@@ -1,58 +1,26 @@
 <template>
-    <section class="experience-section">
-        <h2 class="section-title">Work Experience</h2>
-        
-        <div class="experience-grid">
-            <div class="exp-card">
-                <div class="card-content">
-                    <div class="icon-box purple-glow">
-                        <img src={icon1} alt="company">
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="grid-container">
+                <template for:each={experienceCards} for:item="card">
+                    <div key={card.id} class="experience-card">
+                        <div class="icon-container">
+                            <img src={card.icon} alt={card.title} class="card-icon">
+                        </div>
+                        <div class="content-container">
+                            <h3 class="card-title">{card.title}</h3>
+                            <p class="card-description">{card.description}</p>
+                            <a href="https://ibiimemon.com/lab" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="learn-more">
+                               LEARN MORE →
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-box">
-                        <h3>Cill on the Mobile</h3>
-                        <p>Leading the development of a high-performance mobile app...</p>
-                        <button class="learn-more">Learn more</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-card">
-                <div class="card-content">
-                    <div class="icon-box orange-glow">
-                        <img src={icon2} alt="company">
-                    </div>
-                    <div class="text-box">
-                        <h3>Cill on the Mobile</h3>
-                        <p>Leading the development of a high-performance mobile app...</p>
-                        <button class="learn-more">Learn more</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-card">
-                <div class="card-content">
-                    <div class="icon-box blue-glow">
-                        <img src={icon3} alt="company">
-                    </div>
-                    <div class="text-box">
-                        <h3>Cill on the Mobile</h3>
-                        <p>Leading the development of a high-performance mobile app...</p>
-                        <button class="learn-more">Learn more</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-card">
-                <div class="card-content">
-                    <div class="icon-box pink-glow">
-                        <img src={icon4} alt="company">
-                    </div>
-                    <div class="text-box">
-                        <h3>Cill on the Mobile</h3>
-                        <p>Leading the development of a high-performance mobile app...</p>
-                        <button class="learn-more">Learn more</button>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>

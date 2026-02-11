@@ -1,80 +1,98 @@
-.projects-container {
-    max-width: 1100px;
+.projects-section {
+    padding: 80px 24px;
+    background: transparent;
+}
+
+.container {
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 100px 20px;
 }
 
-.project-wrapper {
+.project-row {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 80px;
     align-items: center;
-    margin-bottom: 150px;
 }
 
-/* IMAGE ALIGNMENT */
-.image-area {
-    grid-column: 1 / 8; /* Takes up first 7 columns */
-    grid-row: 1;
-    position: relative;
-    z-index: 1;
+@media (min-width: 1024px) {
+    .project-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Alternating Row Logic */
+    .project-row.reverse .text-content { order: 2; }
+    .project-row.reverse .image-content { order: 1; }
+
+    /* The Overlap Effect */
+    .project-row:not(.reverse) .description-card {
+        width: 120%;
+        position: relative;
+        z-index: 10;
+    }
+
+    .project-row.reverse .description-card {
+        width: 120%;
+        margin-left: -20%;
+        position: relative;
+        z-index: 10;
+    }
 }
 
-.flipped .image-area {
-    grid-column: 6 / -1; /* Takes up last 7 columns */
-}
-
-.project-screenshot {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
-}
-
-/* CONTENT ALIGNMENT (THE OVERLAP) */
-.content-area {
-    grid-column: 7 / -1; /* Starts halfway through the image and goes to end */
-    grid-row: 1;
-    z-index: 2;
-    text-align: right;
-}
-
-.flipped .content-area {
-    grid-column: 1 / 7; /* Starts at beginning and ends halfway through image */
-    text-align: left;
-}
-
-/* TEXT STYLES */
 .featured-tag {
-    color: #b49bff;
-    font-size: 0.85rem;
-    margin-bottom: 5px;
+    color: #c084fc;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
-.project-name {
-    font-size: 1.75rem;
+.project-title {
+    font-size: 2.5rem;
+    color: white;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-/* THE FLOATING GLASS BOX */
-.glass-description {
-    background: rgba(17, 12, 34, 0.75); /* Dark translucent background */
-    backdrop-filter: blur(15px);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(180, 155, 255, 0.2);
-    color: #a0a0a0;
+.description-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px -15px rgba(2, 6, 23, 0.7);
+}
+
+.description-card p {
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-size: 1.1rem;
 }
 
-.project-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
+.image-frame {
+    background: #020617;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
-.flipped .project-icons {
-    justify-content: flex-start;
+.image-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    margin-top: 24px;
+    transition: color 0.2s;
+}
+
+.icon:hover {
+    color: #c084fc;
 }

@@ -1,86 +1,50 @@
-:host {
-    display: block;
-    padding: 4rem 0;
+.about-section {
+    padding: 80px 24px; /* py-20 px-6 */
+    color: white;
+    background: transparent;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.underline {
-    width: 60px;
-    height: 4px;
-    background: #0176d3;
+.container {
+    max-width: 1152px; /* max-w-6xl */
     margin: 0 auto;
-    border-radius: 2px;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.text-center {
+    text-align: center;
+    margin-bottom: 64px; /* mb-16 */
 }
 
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 1.5rem;
+.main-text {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 1.4;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-/* Stats Card Styling */
-.stat-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+.purple-text {
+    color: #c084fc; /* text-purple-400 */
 }
 
-.stat-item {
+.sub-text {
+    font-size: 0.875rem; /* text-sm */
+    opacity: 0.9;
+}
+
+.image-wrapper {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 0;
+    justify-content: center;
 }
 
-.stat-item:not(:last-child) {
-    border-bottom: 1px solid #f3f4f6;
+.illustration-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Adding a subtle glow effect to match the Ibrahim Memon vibe */
+    filter: drop-shadow(0 0 20px rgba(112, 66, 248, 0.2));
 }
 
-.stat-icon {
-    font-size: 1.5rem;
-    background: #f0f7ff;
-    padding: 0.8rem;
-    border-radius: 12px;
-}
-
-.stat-info .label {
-    display: block;
-    font-size: 0.85rem;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.stat-info .value {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #111827;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 1.25rem;
     }
 }

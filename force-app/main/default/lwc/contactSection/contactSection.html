@@ -1,22 +1,63 @@
 <template>
-    <footer class="footer-container">
-        <div class="contact-section">
-            <h2 class="contact-header">Contact</h2>
-            <p class="contact-body">
-                I'm currently looking to join a cross-functional team that values improving people's lives 
-                through accessible design. or have a project in mind? Let's connect.
-            </p>
-            <a href="mailto:gautamverma001@gmail.com" class="email-link">
-                gautamverma001@gmail.com
-            </a>
-        </div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="glass-card">
+                <div class="grid-layout">
+                    
+                    <div class="brand-panel">
+                        <h2 class="glow-text">Let’s Connect</h2>
+                        <p class="panel-desc">
+                            Whether you're building CRM solutions, Experience Cloud platforms, or looking for technical consultation — I’d love to hear from you.
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <div class="method-item">
+                                <div class="method-icon email-bg">✉</div>
+                                <div class="method-text">
+                                    <label>Email me directly</label>
+                                    <a href="mailto:ibii.code@gmail.com">ibii.code@gmail.com</a>
+                                </div>
+                            </div>
 
-        <div class="social-bar">
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <div class="method-item">
+                                <div class="method-icon linkedin-bg">in</div>
+                                <div class="method-text">
+                                    <label>LinkedIn</label>
+                                    <a href="https://www.linkedin.com/in/ibrahimmemonn/" target="_blank">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="status-badge">
+                            <span class="pulse-dot"></span>
+                            I usually respond within the same day.
+                        </div>
+                    </div>
+
+                    <div class="form-panel">
+                        <div class="input-wrapper">
+                            <label>Your Name</label>
+                            <input type="text" data-id="name" placeholder="John Doe" class="glass-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label>Email Address</label>
+                            <input type="email" data-id="email" placeholder="you@example.com" class="glass-input">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label>Message</label>
+                            <textarea data-id="message" placeholder="What's on your mind?" class="glass-textarea"></textarea>
+                        </div>
+
+                        <button class="prime-btn" onclick={handleSendMessage}>
+                            <span class="btn-content">Send Message</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 </template>

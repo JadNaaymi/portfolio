@@ -1,87 +1,132 @@
-:host {
-    display: block;
-    margin-top: 50px;
-}
-
-.hero-container {
+.banner-section {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 2rem;
+    justify-content: center;
+    padding: 80px 24px;
+    color: white;
 }
 
-/* Memoji Styling & Animation */
-.image-wrapper {
-    position: relative;
-    width: 180px;
-    height: 180px;
+.hero-layout {
+    display: flex;
+    flex-direction: column-reverse; /* Mobile first */
 }
 
-.memoji {
-    width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 2;
-    animation: float 4s ease-in-out infinite;
+@media (min-width: 1024px) {
+    .hero-layout { flex-direction: row; align-items: center; }
 }
 
-.profile-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    background: #7042f8;
-    filter: blur(50px);
-    border-radius: 50%;
-    opacity: 0.6;
-}
-
-/* Typography */
-.intro-text {
-    color: #b49bff;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.main-title {
+.main-headline {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin: 10px 0;
 }
 
-.accent-text {
-    color: transparent;
-    -webkit-text-stroke: 1px #b49bff;
-    /* This creates the "hollow" text look in the image */
-}
-
-.sub-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-top: 2rem;
-}
-
-.brand-link {
-    color: #4267B2; /* Facebook Blue */
+/* The Animated Typing Text */
+.typing-text {
+    font-size: 3rem;
     font-weight: bold;
-    cursor: pointer;
+    margin-top: 40px;
 }
 
-/* Animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+.cursor {
+    animation: pulse 1s infinite;
+    color: #c084fc;
 }
 
-.fade-in {
-    animation: fadeInStep 1.2s ease-out forwards;
+/* Gradient Text (replaces Tailwind's bg-clip-text) */
+.gradient-text {
+    background: linear-gradient(to right, #7c3aed, #c084fc, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
-@keyframes fadeInStep {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.circle-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.circle-img {
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    width: 120%;
+    z-index: -1;
+}
+
+.company-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.blue { color: #60a5fa; }
+.purple { color: #c084fc; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.me-glow{
+    width: 150px;
+}
+
+
+
+.cta-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+/* Primary Button: Purple/Blue Gradient */
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+}
+
+/* Secondary Button: Outlined Glassmorphism */
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cta-container {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }

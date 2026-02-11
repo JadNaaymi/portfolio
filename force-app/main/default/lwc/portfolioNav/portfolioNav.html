@@ -1,13 +1,17 @@
 <template>
-    <nav class="nav-container">
-        <div class="logo">
-            <span class="logo-text">Σ</span>
-        </div>
+    <header class="nav-container">
+        <nav class="nav-content">
+            <div class="logo-wrapper">
+                <a href="#home">
+                    <img src={logoUrl} alt="jad" class="logo-img">
+                </a>
+            </div>
 
-        <div class="nav-links">
-            <a href="#home" class="nav-item">Home</a>
-            <a href="#about" class="nav-item">About</a>
-            <a href="#lab" class="nav-item">Lab</a>
-        </div>
-    </nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="link"   name="home">Home</a></li>
+                <li><a href="#about" class="link" onclick={handleAboutClick} name="about">About</a></li>
+                <li><a href="#lab" class="link"  name="experience">Lab</a></li>
+            </ul>
+        </nav>
+    </header>
 </template>
