@@ -1,4 +1,4 @@
-public with sharing class ContactController {
+public without sharing class ContactController {
     @AuraEnabled
     public static void saveContactRequest(String name, String email, String message) {
         try {

@@ -1,50 +1,118 @@
 .about-section {
-    padding: 80px 24px; /* py-20 px-6 */
-    color: white;
+    padding: 80px 24px;
     background: transparent;
+    color: white;
 }
 
 .container {
-    max-width: 1152px; /* max-w-6xl */
+    max-width: 1152px;
     margin: 0 auto;
 }
 
-.text-center {
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 64px; /* mb-16 */
+    margin-bottom: 48px;
+    color: white;
 }
 
-.main-text {
-    font-size: 1.5rem; /* text-2xl */
-    line-height: 1.4;
-    max-width: 100%;
-    margin: 0 auto;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
 
-.purple-text {
-    color: #c084fc; /* text-purple-400 */
-}
-
-.sub-text {
-    font-size: 0.875rem; /* text-sm */
-    opacity: 0.9;
-}
-
-.image-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.illustration-img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    /* Adding a subtle glow effect to match the Ibrahim Memon vibe */
-    filter: drop-shadow(0 0 20px rgba(112, 66, 248, 0.2));
-}
-
-@media (max-width: 768px) {
-    .main-text {
-        font-size: 1.25rem;
+@media (min-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1.5fr 1fr;
     }
+}
+
+/* Left Narrative Styling */
+.label-purple {
+    color: #c084fc;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+
+.main-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 16px 0;
+    color: #fff;
+}
+
+.sub-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.principles-title {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.principles-list li {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+.principles-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #c084fc;
+}
+
+/* Right Snapshot Card Styling */
+.snapshot-card {
+    background: linear-gradient(to right, #020617, #2e1065, #020617);
+    border-top: 3px solid #7e22ce;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.snapshot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(88, 28, 135, 0.4);
+}
+
+.snapshot-card label {
+    font-size: 0.75rem;
+    color: #c084fc;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.card-highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 8px 0;
+    color: white;
+}
+
+.card-sub {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-note {
+    margin-top: 50px;
+    text-align: center;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }

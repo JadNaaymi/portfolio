@@ -1,27 +1,27 @@
 <template>
-    <section class="tech-stack-section">
-        <div class="stack-intro">
-            <p>I'm currently looking to join a <span class="purple-text">cross-functional</span> team</p>
-            <p class="sub-intro">that values improving lives through accessible design.</p>
-        </div>
-
-        <div class="orbit-container">
-            <div class="center-hub">
-                <div class="hub-glow"></div>
-                <div class="hub-logo">
-                    <span class="logo-symbol">Σ</span> 
-                </div>
+    <div class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="grid-container">
+                <template for:each={skillsData} for:item="skill">
+                    <div key={skill.id} class="experience-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">{skill.name}</h3>
+                                <span class="skill-percent">{skill.level}%</span>
+                            </div>
+                            
+                            <div class="progress-container">
+                                <div class="progress-bar" style={skill.barStyle}></div>
+                            </div>
+                            
+                            <p class="card-description">{skill.description}</p>
+                            <span class="category-tag">{skill.category}</span>
+                        </div>
+                    </div>
+                </template>
             </div>
-
-            <div class="icons-wrapper">
-                <div class="tech-icon icon-1"><img src={figmaUrl} alt="Figma"></div>
-                <div class="tech-icon icon-2"><img src={reactUrl} alt="React"></div>
-                <div class="tech-icon icon-3"><img src={gitUrl} alt="Git"></div>
-                <div class="tech-icon icon-4"><img src={nodeUrl} alt="Node"></div>
-                </div>
-
-            <div class="orbit-ring ring-1"></div>
-            <div class="orbit-ring ring-2"></div>
         </div>
-    </section>
+    </div>
 </template>

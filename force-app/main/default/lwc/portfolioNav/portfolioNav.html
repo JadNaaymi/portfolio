@@ -6,12 +6,22 @@
                     <img src={logoUrl} alt="jad" class="logo-img">
                 </a>
             </div>
+            <button class="mobile-menu-btn" onclick={toggleMenu}>
+                <div class={hamburgerClass}></div>
+            </button>
 
-            <ul class="nav-links">
-                <li><a href="#home" class="link"   name="home">Home</a></li>
-                <li><a href="#about" class="link" onclick={handleAboutClick} name="about">About</a></li>
-                <li><a href="#lab" class="link"  name="experience">Lab</a></li>
-            </ul>
+            <!-- <ul class="nav-links">
+                <li><a href="#home" class="link">Home</a></li>
+                <li><a href="#about" class="link" onclick={handleAboutClick}>About</a></li>
+                <li><a href="#lab" class="link">Lab</a></li>
+                <li><a href="#contact" class="link">Contact</a></li>
+            </ul> -->
+            <ul class={navLinksClass}>
+    <li><a href="#home" class="link" data-text="Home" onclick={closeMenu}>Home</a></li>
+    <li><a href="#about" class="link" data-text="About" onclick={handleAboutClick}>About</a></li>
+    <li><a href="#lab" class="link" data-text="Lab" onclick={closeMenu}>Lab</a></li>
+    <li><a href="#contact" class="link" data-text="Contact" onclick={closeMenu}>Contact</a></li>
+</ul>
         </nav>
     </header>
 </template>

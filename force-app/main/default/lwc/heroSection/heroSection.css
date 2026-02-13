@@ -122,11 +122,64 @@
     transform: translateY(-3px);
 }
 
+
 /* Mobile Responsive */
-@media (max-width: 768px) {
-    .cta-container {
+@media (max-width: 1024px) {
+    /* 1. Force the layout into a column and put image first */
+    .hero-layout {
+        display: flex;
+        flex-direction: column; /* Stacks vertically */
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    /* 2. Ensure the image wrapper is at the top */
+    .image-wrapper {
+        order: -1; /* This moves the image above the content-wrapper */
+        width: 100%;
+        display: flex;
         justify-content: center;
+    }
+
+    .me-container {
+        width: 100%;
+        max-width: 300px; /* Adjust based on your preference */
+        margin: 0 auto;
+    }
+
+    .me-photo {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 3. Scale down the massive text so it fits the phone screen */
+    .main-headline {
+        font-size: 2.2rem; /* Reduced from 3.5rem */
+        line-height: 1.2;
+        margin: 20px 0;
+    }
+
+    .typing-text {
+        font-size: 1.8rem; /* Reduced from 3rem */
+    }
+
+    /* 4. Center the buttons */
+    .cta-container {
         flex-direction: column;
+        align-items: center;
+        width: 100%;
         gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%; /* Makes them easy to tap */
+        justify-content: center;
+    }
+
+    /* 5. Adjust the hand-drawn circle for the smaller font */
+    .circle-img {
+        width: 115%;
+        left: -8%;
     }
 }

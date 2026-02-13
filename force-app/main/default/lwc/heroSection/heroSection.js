@@ -62,23 +62,7 @@ export default class HeroSection extends LightningElement {
     }
     
 
-    // handleDownloadCV(event) {
-    //     // Prevent default behavior if needed
-    //     event.preventDefault();
-
-    //     // Professional way: Creating a hidden link programmatically
-    //     const downloadLink = document.createElement("a");
-    //     downloadLink.href = this.cvUrl;
-    //     downloadLink.download = "Jad_Naaymi_Software_Engineer_CV.pdf"; 
-    //     downloadLink.target = "_blank";
-        
-    //     document.body.appendChild(downloadLink);
-    //     downloadLink.click();
-    //     document.body.removeChild(downloadLink);
-
-    //     // You could trigger a Toast message here to show professionalism
-    //     console.log('CV Download started successfully');
-    // }
+    
     
     async handleDownloadCV(event) {
         try {

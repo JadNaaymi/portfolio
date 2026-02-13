@@ -1,24 +1,24 @@
 <template>
-    <section class="cert-wrapper" id="certs">
-        <div class="section-header">
-            <h2 class="title">Certifications</h2>
-            <p class="subtitle">Verified expertise in the Salesforce ecosystem.</p>
-        </div>
-
-        <div class="cert-grid">
-            <template for:each={certs} for:item="cert">
-                <div key={cert.id} class="cert-card">
-                    <div class="cert-icon-container">
-                        <img src={cert.logo} alt={cert.name} class="cert-logo" />
+    <section class="cert-galaxy">
+        <div class="container">
+            <h2 class="section-title">Certifications & Credentials</h2>
+            
+            <div class="galaxy-grid">
+                <template for:each={certs} for:item="cert">
+                    <div key={cert.id} class="float-container" style={cert.delay}>
+                        <div class="glass-card">
+                            <div class="card-header">
+                                <div class="sf-glow-icon"></div>
+                                <span class="cert-year">{cert.year}</span>
+                            </div>
+                            <h3 class="cert-name">{cert.name}</h3>
+                            <div class="card-footer">
+                                <span class="badge">Verified</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cert-info">
-                        <h3>{cert.name}</h3>
-                        <p class="issuer">{cert.issuer}</p>
-                        <p class="date">Issued: {cert.date}</p>
-                        <a href={cert.verifyUrl} target="_blank" class="verify-link">Verify Credentials</a>
-                    </div>
-                </div>
-            </template>
+                </template>
+            </div>
         </div>
     </section>
 </template>
