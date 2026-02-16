@@ -1,48 +1,38 @@
 :host {
-    --transition-speed: 0.6s;
-    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    --bg-dark: #030014;
+    --accent-purple: #7042f8;
 }
 
-/* Theme Definitions */
-.light {
-    --bg-main: #f8fafc;
-    --text-main: #0f172a;
-    --accent: #6366f1;
-    --card-glow: rgba(99, 102, 241, 0.2);
-    --glass-bg: rgba(255, 255, 255, 0.8);
-}
-
-.dark {
-    --bg-main: #020617;
-    --text-main: #f8fafc;
-    --accent: #38bdf8;
-    --card-glow: rgba(56, 189, 248, 0.15);
-    --glass-bg: rgba(15, 23, 42, 0.7);
-}
-
-.app-container {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    transition: background-color var(--transition-speed) var(--ease);
+.portfolio-app {
+    background-color: var(--bg-dark);
+    color: white;
     min-height: 100vh;
+    position: relative;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Global Advanced Animation: View-Reveal */
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+/* Background Glows to match Ibrahim's site */
+.purple-glow {
+    position: fixed;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(112, 66, 248, 0.15) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Applied to all sections via the child components */
-section {
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
+.glow-1 { top: -10%; right: -10%; }
+.glow-2 { bottom: 10%; left: -10%; }
+
+.content-fade-in {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

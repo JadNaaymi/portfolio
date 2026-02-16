@@ -1,102 +1,427 @@
-:host {
-    display: block;
-    padding: 5rem 0;
-    background: #ffffff;
+.contact-section {
+    padding: 100px 20px;
+    /* background: radial-gradient(circle at center, #0a0514 0%, #020617 100%); */
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+.glass-card {
+    /* background: rgba(255, 255, 255, 0.02); */
+    background: rgba(13, 5, 33, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    overflow: hidden;
     max-width: 1000px;
     margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Info Side */
-.info-item {
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.brand-panel {
+    padding: 60px;
+    /* background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.15), transparent); */
+    background: radial-gradient(circle at top left, rgba(126, 34, 206, 0.25), transparent 70%);
+}
+
+.glow-text {
+    font-size: 3rem;
+    /* background: linear-gradient(to right, #fff, #a855f7); */
+    background: linear-gradient(to right, #ffffff, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* Method Items styling */
+.method-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.method-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.icon {
-    font-size: 1.5rem;
-    background: #f0f7ff;
-    padding: 1rem;
-    border-radius: 50%;
+/* Form Panel styling */
+.form-panel {
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.info-item h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #1a202c;
-}
-
-.info-item p {
-    margin: 0;
-    color: #666;
-}
-
-/* Form Side */
-.contact-form-container {
-    background: #f9fafb;
-    padding: 2.5rem;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #374151;
-}
-
-.form-input {
+.glass-input, .glass-textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.2s;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #0176d3;
-    box-shadow: 0 0 0 3px rgba(1, 118, 211, 0.1);
-}
-
-.submit-btn {
-    width: 100%;
-    background: #0176d3;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
     color: white;
-    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: #a855f7;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.prime-btn {
+    /* background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%); */
+    background: linear-gradient(135deg, #3b82f6 0%, #7e22ce 100%);
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
+    padding: 16px;
+    border-radius: 14px;
     border: none;
-    border-radius: 8px;
+    color: white;
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.2s;
 }
 
-.submit-btn:hover {
-    background: #015ba1;
+.prime-btn:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
-@media (max-width: 768px) {
-    .contact-grid {
+
+.amazing-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 5, 20, 0.75);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.amazing-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 32px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s ease-out;
+}
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.icon-sphere {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+.pulse-ring {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: #a855f7;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+.gradient-title {
+    background: linear-gradient(to right, #fff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.highlight { color: #a855f7; font-weight: bold; }
+.action-btn {
+    margin-top: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.action-btn:hover { background: white; color: #0d051a; }
+
+
+/* Error */
+
+/* Container to position it at the top */
+.error-toast-container {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    width: 90%;
+    max-width: 400px;
+}
+
+.error-toast {
+    background: rgba(40, 10, 10, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.error-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.error-icon {
+    background: #ff4d4d;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.error-text strong {
+    display: block;
+    color: #ff8080;
+    font-size: 0.9rem;
+}
+
+.error-text p {
+    color: white;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.error-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+
+/* Shake Animation */
+.animate-shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* linkedin */
+.linkedin-bg {
+    background: rgba(10, 102, 194, 0.15); /* LinkedIn Blue Tint */
+    color: #0a66c2; /* Official LinkedIn Blue */
+}
+
+.method-icon svg {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.method-item:hover .method-icon svg {
+    transform: scale(1.1); /* Subtle pop on hover */
+}
+
+/* Email */
+.email-bg {
+    background: rgba(168, 85, 247, 0.15); /* Soft Purple Tint */
+    color: #a855f7; /* Matching your brand purple */
+}
+
+/* Ensure icons are centered and look uniform */
+.method-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.method-item:hover .method-icon {
+    background: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+/* github */
+.github-bg {
+    background: rgba(255, 255, 255, 0.1); /* Subtle white glow */
+    color: #ffffff; /* White icon */
+}
+
+/* Updated Hover Logic for the whole list */
+.method-item:hover .github-bg {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.method-icon {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+/* Unified Icon Background for All Items */
+.brand-icon-bg {
+    background: rgba(168, 85, 247, 0.15); /* Purple tint */
+    color: #a855f7; /* Purple icon color */
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for all Icons */
+.method-item:hover .brand-icon-bg {
+    background: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    color: #fff; /* Icons turn white on hover */
+}
+
+/* Fix spacing between Icon and Text if needed */
+.method-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.method-text label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.method-text a {
+    text-decoration: none;
+    color: #3b82f6; /* Keep links blue for visibility */
+    font-weight: 500;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .glass-card {
+        border-radius: 24px;
+    }
+
+    /* Stack the brand panel and form panel vertically */
+    .grid-layout {
         grid-template-columns: 1fr;
-        gap: 2rem;
+    }
+
+    .brand-panel, .form-panel {
+        padding: 40px 25px;
+    }
+
+    .glow-text {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .panel-desc {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Center the contact methods on mobile */
+    .contact-methods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .method-item {
+        width: 100%;
+        max-width: 300px;
+        justify-content: flex-start;
+    }
+
+    /* Center the status badge */
+    .status-badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        margin-top: 10px;
+    }
+
+    /* Adjust the success modal for small screens */
+    .amazing-card {
+        padding: 2rem 1.5rem;
+        width: 90%;
+        margin: 0 20px;
+    }
+
+    .gradient-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-panel, .form-panel {
+        padding: 30px 20px;
+    }
+
+    .glow-text {
+        font-size: 1.8rem;
+    }
+
+    /* Ensure buttons are easy to tap */
+    .prime-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .error-toast-container {
+        width: 95%;
     }
 }

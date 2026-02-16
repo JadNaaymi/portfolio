@@ -1,31 +1,34 @@
 <template>
-    <section class="projects-wrapper" id="projects">
-        <div class="section-header">
-            <h2 class="title">Featured Work</h2>
-            <div class="underline"></div>
-        </div>
-
-        <div class="projects-grid">
-            <template for:each={projects} for:item="proj">
-                <div key={proj.id} class="card">
-                    <div class="image-container">
-                        <img src={proj.imageUrl} alt={proj.title} />
-                    </div>
-                    <div class="card-content">
-                        <h3 class="project-title">{proj.title}</h3>
-                        <p class="project-desc">{proj.description}</p>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <template for:each={projects} for:item="project">
+                <div key={project.id} class={project.containerClass}>
+                    
+                    <div class="text-content">
+                        <p class="featured-tag">Featured Project</p>
+                        <h3 class="project-title">{project.title}</h3>
                         
-                        <div class="tech-tags">
-                            <template for:each={proj.techStack} for:item="stack">
-                                <span key={stack} class="tag">{stack}</span>
-                            </template>
+                        <div class="description-card">
+                            <p>{project.description}</p>
                         </div>
 
-                        <div class="card-links">
-                            <a href={proj.githubUrl} class="link github">GitHub</a>
-                            <a href={proj.demoUrl} class="link demo">Live Demo</a>
+                        <template if:true={project.link}>
+                            <a href={project.link} target="_blank" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </a>
+                        </template>
+                    </div>
+
+                    <div class="image-content">
+                        <div class="image-frame">
+                            <img src={project.image} alt={project.title}>
                         </div>
                     </div>
+
                 </div>
             </template>
         </div>

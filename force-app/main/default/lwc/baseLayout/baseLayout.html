@@ -1,17 +1,25 @@
 <template>
-    <div class={themeClass} data-theme={themeClass}>
-        <main class="app-container">
-            <c-theme-toggle 
-                is-dark={isDark} 
-                ontoggle={handleThemeToggle}>
-            </c-theme-toggle>
+    <div class="portfolio-app">
+        <div class="stars-container"></div>
+        <div class="purple-glow glow-1"></div>
+        <div class="purple-glow glow-2"></div>
 
-            <c-hero-section></c-hero-section>
-            <!-- <c-about-section></c-about-section>
-            <c-skills-section></c-skills-section>
-            <c-projects-section></c-projects-section>
+        <c-portfolio-nav onmyevent={handleAboutEvent}></c-portfolio-nav>
+
+        <main class="content-fade-in">
+
+            <c-hero-section id="home"></c-hero-section>
+            <c-portfolio-experience id="experience"></c-portfolio-experience>
+            <c-portfolio-tech-stack></c-portfolio-tech-stack>
+
+            <div class="about-child">
+                <c-about-section id="about"></c-about-section>
+            </div>
             <c-certifications-section></c-certifications-section>
-            <c-contact-section></c-contact-section> -->
+            <c-projects-section id="projects"></c-projects-section>
+            
         </main>
+
+       <c-contact-section id="contact"></c-contact-section>
     </div>
 </template>

@@ -1,52 +1,81 @@
-<template>
-    <section class="about-wrapper" id="about">
-        <div class="section-header">
-            <h2 class="title">About Me</h2>
-            <div class="underline"></div>
-        </div>
-
-        <div class="about-grid">
-            <div class="about-text">
-                <p>
-                    Hello! I'm a passionate developer who loves turning complex problems into simple, 
-                    beautiful, and intuitive designs. My journey in tech started [Year/Event], 
-                    and since then, I've been obsessed with building things that live on the internet.
-                </p>
-                <p>
-                    Currently, I focus on the <strong>Salesforce Ecosystem</strong>, crafting high-performance 
-                    Lightning Web Components and optimizing business processes. I believe that clean code 
-                    isn't just a requirement—it's an art form.
-                </p>
-                <p>
-                    When I'm not at my desk, you'll probably find me [insert hobby: e.g., hiking, gaming, or drinking way too much espresso].
+<!-- <template>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="main-text">
+                    I'm currently looking to join a 
+                    <span class="purple-text">cross-functional team</span>
+                    <br/>
+                    <span class="sub-text">
+                        that values improving people's lives through accessible design
+                    </span>
                 </p>
             </div>
+            
+            <div class="image-wrapper">
+                <img 
+                    src={illustrationUrl} 
+                    alt="Skills Illustration" 
+                    class="illustration-img"
+                >
+            </div>
+        </div>
+    </section>
+</template> -->
+<template>
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="narrative-column">
+                    <span class="label-purple">Who I am as a technical consultant</span>
+                    <p class="main-description">
+                        I work as a technical consultant with a strong focus on Salesforce – but I think in terms of systems, not just features. 
+                        My work sits between business needs, solution architecture and hands-on implementation.
+                    </p>
+                    
+                    <p class="sub-description">
+                        My background combines Salesforce development with broader web and mobile experience. I enjoy taking a problem that starts as a vague requirement and turning it into a clear architecture: 
+                        data model, integration points, security model and the user journeys that sit on top of it.
+                    </p>
 
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-item">
-                        <span class="stat-icon">📍</span>
-                        <div class="stat-info">
-                            <span class="label">Location</span>
-                            <span class="value">City, Country</span>
-                        </div>
+                    <div class="principles-box">
+                        <h4 class="principles-title">Principles I Work By</h4>
+                        <ul class="principles-list">
+                            <li>Start from the problem, not the tool – understand the business context before proposing Salesforce or any other platform.</li>
+                            <li>Design like an architect, implement like a developer – clear models, clean APIs and reusable components.</li>
+                            <li>Communicate in both languages – explain technical trade-offs in a way that makes sense to business and engineering teams.</li>
+                        </ul>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🎓</span>
-                        <div class="stat-info">
-                            <span class="label">Education</span>
-                            <span class="value">B.S. Computer Science</span>
-                        </div>
+                </div>
+
+                <div class="snapshot-column">
+                    <h3 class="snapshot-title">Quick Snapshot</h3>
+                    
+                    <div class="snapshot-card">
+                        <label>YEARS IN TECH</label>
+                        <p class="card-highlight">5+</p>
+                        <p class="card-sub">Salesforce, web and mobile experience</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">💼</span>
-                        <div class="stat-info">
-                            <span class="label">Experience</span>
-                            <span class="value">3+ Years</span>
-                        </div>
+
+                    <div class="snapshot-card">
+                        <label>DOMAINS & FOCUS</label>
+                        <p class="card-highlight">Customer portals · Internal tools · Integrations</p>
+                        <p class="card-sub">Salesforce-centric, but solution-oriented</p>
+                    </div>
+
+                    <div class="snapshot-card">
+                        <label>TECH & TOOLING</label>
+                        <p class="card-highlight">LWC · Apex · Flows · REST · Git · Azure DevOps</p>
+                        <p class="card-sub">From front-end to back-end and pipelines</p>
                     </div>
                 </div>
             </div>
+            
+            <p class="footer-note">
+                I'm especially interested in roles where I can act as a technical partner – helping shape the solution, then building it with Salesforce and the surrounding stack.
+            </p>
         </div>
     </section>
 </template>

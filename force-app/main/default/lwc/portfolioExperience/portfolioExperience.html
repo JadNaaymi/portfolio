@@ -1,0 +1,27 @@
+<template>
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="grid-container">
+                <template for:each={experienceCards} for:item="card">
+                    <div key={card.id} class="experience-card">
+                        <div class="icon-container">
+                            <img src={card.icon} alt={card.title} class="card-icon">
+                        </div>
+                        <div class="content-container">
+                            <h3 class="card-title">{card.title}</h3>
+                            <p class="card-description">{card.description}</p>
+                            <a href="https://ibiimemon.com/lab" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="learn-more">
+                               LEARN MORE →
+                            </a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+</template>

@@ -1,48 +1,185 @@
-:host {
-    display: block;
-    height: 100vh;
+.banner-section {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    background: var(--bg-main);
+    padding: 80px 24px;
+    color: white;
 }
 
-.hero-content {
-    text-align: center;
-    z-index: 2;
+.hero-layout {
+    display: flex;
+    flex-direction: column-reverse; /* Mobile first */
 }
 
-/* Advanced Text Animation: Masked Gradient */
-.accent-text {
-    background: linear-gradient(90deg, #ff0080, #7928ca, #ff0080);
-    background-size: 200% auto;
+@media (min-width: 1024px) {
+    .hero-layout { flex-direction: row; align-items: center; }
+}
+
+.main-headline {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+/* The Animated Typing Text */
+.typing-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.cursor {
+    animation: pulse 1s infinite;
+    color: #c084fc;
+}
+
+/* Gradient Text (replaces Tailwind's bg-clip-text) */
+.gradient-text {
+    background: linear-gradient(to right, #7c3aed, #c084fc, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
-    font-size: 5rem;
-    font-weight: 900;
+    display: inline-block;
 }
 
-@keyframes shine {
-    to { background-position: 200% center; }
+.circle-wrap {
+    position: relative;
+    display: inline-block;
 }
 
-/* The "Amazing" Part: Floating Glass Blob */
-.blob {
+.circle-img {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(180deg, var(--accent) 0%, #7000ff 100%);
-    filter: blur(80px);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: morph 8s ease-in-out infinite;
-    opacity: 0.4;
-    z-index: 1;
+    top: 5px;
+    left: -10px;
+    width: 120%;
+    z-index: -1;
 }
 
-@keyframes morph {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+.company-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.blue { color: #60a5fa; }
+.purple { color: #c084fc; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.me-glow{
+    width: 150px;
+}
+
+
+
+.cta-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+/* Primary Button: Purple/Blue Gradient */
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+}
+
+/* Secondary Button: Outlined Glassmorphism */
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    /* 1. Force the layout into a column and put image first */
+    .hero-layout {
+        display: flex;
+        flex-direction: column; /* Stacks vertically */
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    /* 2. Ensure the image wrapper is at the top */
+    .image-wrapper {
+        order: -1; /* This moves the image above the content-wrapper */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .me-container {
+        width: 100%;
+        max-width: 300px; /* Adjust based on your preference */
+        margin: 0 auto;
+    }
+
+    .me-photo {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 3. Scale down the massive text so it fits the phone screen */
+    .main-headline {
+        font-size: 2.2rem; /* Reduced from 3.5rem */
+        line-height: 1.2;
+        margin: 20px 0;
+    }
+
+    .typing-text {
+        font-size: 1.8rem; /* Reduced from 3rem */
+    }
+
+    /* 4. Center the buttons */
+    .cta-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%; /* Makes them easy to tap */
+        justify-content: center;
+    }
+
+    /* 5. Adjust the hand-drawn circle for the smaller font */
+    .circle-img {
+        width: 115%;
+        left: -8%;
+    }
 }

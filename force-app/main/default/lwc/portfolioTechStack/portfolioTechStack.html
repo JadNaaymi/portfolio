@@ -1,0 +1,27 @@
+<template>
+    <div class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="grid-container">
+                <template for:each={skillsData} for:item="skill">
+                    <div key={skill.id} class="experience-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">{skill.name}</h3>
+                                <span class="skill-percent">{skill.level}%</span>
+                            </div>
+                            
+                            <div class="progress-container">
+                                <div class="progress-bar" style={skill.barStyle}></div>
+                            </div>
+                            
+                            <p class="card-description">{skill.description}</p>
+                            <span class="category-tag">{skill.category}</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
